@@ -1,7 +1,7 @@
 from minicad.model.shape import Shape
 from minicad.model.point import Point
 
-from PySide6.QtGui import QPainter
+from PySide6.QtGui import QPainter , QPolygon
 from PySide6.QtCore import QRectF, QPoint
 
 import math
@@ -22,7 +22,7 @@ class Triangle(Shape):
         p3 = QPoint(self._center.x + self._side / 2, self._center.y + (1 / 3) * height)  # Bottom-right
 
 
-        triangle = QPoint([p1, p2, p3])
+        triangle = QPolygon([p1, p2, p3])
         painter.drawPolygon(triangle)
 
 
